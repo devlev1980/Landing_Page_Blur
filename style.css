@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.showCase::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url(apple-black-and-white-black-and-white-169573.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1s;
+}
+
+.showCase:hover .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.showCase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -205px;
+    width: 450px;
+    height: 500px;
+    text-align: center;
+    transition: all 1s;
+}
+
+.content .logo {
+    height: 300px;
+    width: 300px;
+}
+
+.content .title {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.content .text {
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: 1800px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem
+}
+.grid-3{
+    /*border: 1px solid orange;*/
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+}
+.grid-2{
+    /*border: 1px solid orange;*/
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+}
+.center{
+    text-align: center;
+    margin: auto;
+}
+.bg-light{
+    background-color: #f4f4f4;
+    color: #333;
+    display: grid;
+}
+.bg-dark{
+    background-color: #333;
+    color: #f4f4f4;
+    display: grid;
+}
+footer {
+    padding: 2.2rem;
+}
+footer p{
+    margin: 0;
+
+}
+
+/*Small screens*/
+@media   screen  and (max-width: 500px) {
+    .showCase::after{
+        height: 60vh;
+    }
+    .content{
+        top:5%;
+        margin-top: 5px;
+    }
+    .content .logo{
+        height: 200px ;
+        width: 200px;
+    }
+    .content .text{
+        display: none;
+    }
+    .grid-3,.grid-2{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .services div{
+        border-bottom: 1px dashed #333;
+    }
+}
